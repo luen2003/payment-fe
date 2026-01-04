@@ -31,7 +31,7 @@ const App = () => {
       const data = await res.json();
 
       if (data.code === '00') {
-        // ✅ CHUYỂN TRANG THANH TOÁN TRỰC TIẾP
+        // CHUYỂN TRANG THANH TOÁN TRỰC TIẾP
         window.location.href = data.data.checkoutUrl;
       } else {
         alert(data.desc || 'Tạo giao dịch thất bại');
@@ -49,16 +49,18 @@ const App = () => {
         <h1>💳 Thanh toán</h1>
         <p className="subtitle">Nhập số tiền để thanh toán</p>
 
-        <input
-          type="number"
-          placeholder="Số tiền (VND)"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        />
+        <div className="form-group">
+          <input
+            type="number"
+            placeholder="Số tiền (VND)"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+          />
 
-        <button onClick={handlePaymentClick} disabled={loading}>
-          {loading ? 'Đang chuyển...' : 'Thanh toán'}
-        </button>
+          <button onClick={handlePaymentClick} disabled={loading}>
+            {loading ? 'Đang chuyển...' : 'Thanh toán'}
+          </button>
+        </div>
       </div>
     </div>
   );
