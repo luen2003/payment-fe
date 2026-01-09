@@ -13,11 +13,13 @@ html, body {
   height: 100%;
 }
 .container {
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
+
 
 .card {
   background: #fff;
@@ -27,7 +29,7 @@ html, body {
   max-width: 420px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  transform: translateY(-40px); 
+  margin-top: -50px;
 }
 
 h1 {
